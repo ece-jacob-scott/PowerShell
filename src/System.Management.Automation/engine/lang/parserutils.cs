@@ -752,11 +752,13 @@ namespace System.Management.Automation
 
             RegexOptions regexOptions = parseRegexOptions(options);
 
+            int calculatedLimit = limit;
+
             // if the limit is negative then set Regex to read from right to left
-            if (limit < 0) 
+            if (calculatedLimit < 0) 
             {
                 regexOptions |= RegexOptions.RightToLeft;
-                limit *= -1;
+                calculatedLimit *= -1;
             }
 
             Regex regex = NewRegex(separatorPattern, regexOptions);
@@ -765,7 +767,7 @@ namespace System.Management.Automation
 
             foreach (string item in content)
             {
-                string[] split = regex.Split(item, limit);
+                string[] split = regex.Split(item, calculatedLimit);
                 ExtendList(results, split);
             }
 
