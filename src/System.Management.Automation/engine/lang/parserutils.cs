@@ -651,7 +651,8 @@ namespace System.Management.Automation
             }
         }
 
-        private static string ReverseStringUtility(string str) {
+        private static string ReverseStringUtility(string str)
+        {
             var revStr = str.ToCharArray();
             Array.Reverse(revStr);
             return new string(revStr);
@@ -687,7 +688,8 @@ namespace System.Management.Automation
                             args: new object[] { item, strIndex });
                         if (LanguagePrimitives.IsTrue(predicateResult))
                         {
-                            if (buf.Length != 0) {
+                            if (buf.Length != 0)
+                            {
                                 split.Add(buf.ToString());
                             }
                             
@@ -779,7 +781,6 @@ namespace System.Management.Automation
                         }
                     }
                 }
-                
 
                 // Add any remainder, if we're under the limit.
                 if (buf.Length > 0 &&
