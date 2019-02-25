@@ -704,7 +704,7 @@ namespace System.Management.Automation
                     
                     if (buf.Length != 0)
                     {
-                        split.Add((limit < 0)? ReverseStringUtility(buf.ToString()): buf.ToString());
+                        split.Add((limit < 0) ? ReverseStringUtility(buf.ToString()) : buf.ToString());
                     }
 
                     buf.Clear();
@@ -718,7 +718,7 @@ namespace System.Management.Automation
                             // else add an empty string
                             split.Add(item.Substring(cursor + 1));
                         }
-                        else if((cursor + 1) < item.Length && limit < 0)
+                        else if ((cursor + 1) < item.Length && limit < 0)
                         {
                             split.Add(item.Substring(0, cursor));
                         }
@@ -743,7 +743,7 @@ namespace System.Management.Automation
 
                 if (buf.Length > 0)
                 {
-                    split.Add((limit < 0)? ReverseStringUtility(buf.ToString()): buf.ToString());
+                    split.Add((limit < 0) ? ReverseStringUtility(buf.ToString()) : buf.ToString());
                 }
 
                 if (limit < 0)
