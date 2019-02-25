@@ -733,19 +733,23 @@ namespace System.Management.Automation
                         // it.
                         split.Add(string.Empty);
                     }
+                    
                     // Add any remainder, if we're under the limit.
                     if (buf.Length > 0 &&
                         (limit <= 0 || split.Count < limit))
                     {
                         split.Add(buf.ToString());
                     }
+
                     if (limit < 0)
                     {
                         split.Reverse();
                     }
+
                     ExtendList(results, split);
                 }
             }
+
             return results.ToArray();
         }
 
