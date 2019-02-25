@@ -788,9 +788,13 @@ namespace System.Management.Automation
                 {
                     split.Add(buf.ToString());
                 }
-
+                if (limit < 0)
+                {
+                    split.Reverse();
+                }
                 ExtendList(results, split);
             }
+            
 
             return results.ToArray();
         }
